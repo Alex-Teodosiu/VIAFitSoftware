@@ -46,5 +46,9 @@ public abstract class Person
     this.email = email;
   }
 
+  public String toString(){
+    return "Name: " + name + "\nAddress: " + address + "\nPhone number: " + phoneNumber +
+        "\nEmail: " + email;
+  }
 
 }

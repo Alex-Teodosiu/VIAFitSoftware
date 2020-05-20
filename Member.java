@@ -15,4 +15,7 @@ public class Member extends Person
     this.membershipStatus = membershipStatus;
   }
 
+  public String toString(){
+    return super.toString() + "Premium member: " + membershipStatus;
+  }
 }

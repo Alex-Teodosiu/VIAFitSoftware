@@ -18,4 +18,8 @@ public class Instructor extends Person
     this.classes = classes;
   }
 
+  public String toString(){
+    return super.toString() + "Classes: " + classes;
+  }
+
 }
