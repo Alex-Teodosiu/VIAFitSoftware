@@ -11,7 +11,7 @@ public class InstructorList implements Serializable
     instructorFileAdapter = new InstructorFileAdapter("instructors.bin");
   }
 
-  public void addMember(Instructor instructor){
+  public void addInstructor(Instructor instructor){
     instructors.add(instructor);
     instructorFileAdapter.saveInstructors(this);
   }

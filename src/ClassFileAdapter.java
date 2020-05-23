@@ -1,7 +1,8 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 
-public class ClassFileAdapter
+public class ClassFileAdapter implements Serializable
 {
   private String fileName;
   private FileHandler fileHandler;

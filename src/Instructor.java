@@ -6,14 +6,26 @@ public class Instructor extends Person implements Serializable
   private ArrayList<String> classes;
 
 
-  public Instructor(String name, String address, String phoneNumber, String email, ArrayList<String> classes){
+  public Instructor(String name, String address, String phoneNumber, String email){
     super(name, address, phoneNumber, email);
-    this.classes = classes;
+    classes = new ArrayList<String>();
   }
 
   public ArrayList<String> getClasses()
   {
     return classes;
+  }
+
+  public void addClass(Class clas){
+    classes.add(clas.getClassName());
+  }
+
+  public void removeClass(Class clas){
+    for (int i = 0; i < classes.size(); i++){
+      if (classes.get(i).matches(clas.getClassName())){
+        classes.remove(i);
+      }
+    }
   }
 
   public void setClasses(ArrayList<String> classes){

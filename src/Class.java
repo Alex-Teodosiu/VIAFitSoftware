@@ -36,6 +36,10 @@ public class Class implements Serializable
     endTime = end.copy();
   }
 
+  public String getClassName(){
+    return className;
+  }
+
   public String getTimeSlot(){
     return startTime + " till " + endTime;
   }

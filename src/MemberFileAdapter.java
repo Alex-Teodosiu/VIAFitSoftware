@@ -32,6 +32,11 @@ public class MemberFileAdapter implements Serializable
     return memberList;
   }
 
+  public void removeAllMembers(){
+    MemberList memberList = new MemberList();
+    saveMembers(memberList);
+  }
+
   public void saveMembers(MemberList memberList){
     try
     {
