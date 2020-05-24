@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="893.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/Images/VIAFitLogoTransp.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="318.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#homeButtonClick" prefHeight="26.0" prefWidth="75.0" text="Home" />
+            <Button mnemonicParsing="false" onAction="#memberButtonClick" prefHeight="26.0" prefWidth="75.0" text="Members" />
+            <Button mnemonicParsing="false" onAction="#instructorButtonClick" prefHeight="26.0" prefWidth="75.0" text="Instructors" />
+            <Button mnemonicParsing="false" onAction="#classButtonClick" prefHeight="26.0" prefWidth="75.0" text="Classes" />
+         </children>
+      </HBox>
+      <VBox layoutX="14.0" layoutY="99.0" prefHeight="348.0" prefWidth="1054.0">
+         <children>
+            <HBox prefHeight="67.0" prefWidth="1054.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="60.0" prefWidth="220.0" text="Name:" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="instructorName" prefHeight="60.0" prefWidth="885.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="67.0" prefWidth="1054.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="60.0" prefWidth="220.0" text="Address:" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="instructorAddress" prefHeight="60.0" prefWidth="885.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="67.0" prefWidth="1054.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="60.0" prefWidth="220.0" text="Phone number:" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="instructorPhone" prefHeight="60.0" prefWidth="885.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="67.0" prefWidth="1054.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="60.0" prefWidth="220.0" text="E-mail:" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="instructorMail" prefHeight="60.0" prefWidth="885.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="67.0" prefWidth="1054.0" spacing="5.0">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="14.0" layoutY="51.0" prefHeight="30.0" prefWidth="505.0" text="Name of the specific instructor" />
+      <Button layoutX="14.0" layoutY="551.0" mnemonicParsing="false" onAction="#instructorButtonClick" prefHeight="26.0" prefWidth="138.0" text="Back" />
+      <Button layoutX="624.0" layoutY="481.0" mnemonicParsing="false" onAction="#instructorButtonClick" prefHeight="82.0" prefWidth="200.0" text="Delete instructor">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="saveInstructor" layoutX="868.0" layoutY="481.0" mnemonicParsing="false" onAction="#saveInstructorListener" prefHeight="82.0" prefWidth="200.0" text="Save instructor">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
