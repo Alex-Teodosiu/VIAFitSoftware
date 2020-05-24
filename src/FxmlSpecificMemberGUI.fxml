@@ -36,7 +36,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="60.0" prefWidth="885.0" />
+                  <TextField fx:id="memberName" prefHeight="60.0" prefWidth="885.0" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -49,7 +49,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="60.0" prefWidth="885.0" />
+                  <TextField fx:id="memberAddress" prefHeight="60.0" prefWidth="885.0" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -62,7 +62,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="60.0" prefWidth="885.0" />
+                  <TextField fx:id="memberPhone" prefHeight="60.0" prefWidth="885.0" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -75,7 +75,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="60.0" prefWidth="885.0" />
+                  <TextField fx:id="memberMail" prefHeight="60.0" prefWidth="885.0" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -83,12 +83,12 @@
             </HBox>
             <HBox prefHeight="67.0" prefWidth="1054.0" spacing="5.0">
                <children>
-                  <Label prefHeight="60.0" prefWidth="220.0" text="Membershipstatus:" textAlignment="CENTER">
+                  <Label prefHeight="60.0" prefWidth="220.0" text="Membership status:" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <CheckBox mnemonicParsing="false" prefHeight="60.0" prefWidth="166.0" text="Premium membership" />
+                  <CheckBox fx:id="memberMembership" mnemonicParsing="false" prefHeight="60.0" prefWidth="166.0" text="Premium membership" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -103,7 +103,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="868.0" layoutY="481.0" mnemonicParsing="false" onAction="#memberButtonClick" prefHeight="82.0" prefWidth="200.0" text="Save member">
+      <Button fx:id="memberSave" layoutX="868.0" layoutY="481.0" mnemonicParsing="false" onAction="#saveMemberListener" prefHeight="82.0" prefWidth="200.0" text="Save member">
          <font>
             <Font size="18.0" />
          </font>

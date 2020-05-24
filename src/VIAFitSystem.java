@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class VIAFitSystem
 {
   private MemberList memberList;
@@ -28,6 +30,14 @@ public class VIAFitSystem
     return instructorList;
   }
 
+  public ArrayList<String> getInstructorNames(){
+    ArrayList<String> names = new ArrayList<String>();
+
+    for (int i = 0; i < instructorList.size(); i++){
+      names.add(instructorList.getInstructor(i).getName());
+    }
+    return names;
+  }
   public ClassList getClassList()
   {
     return classList;
@@ -36,6 +46,6 @@ public class VIAFitSystem
   public static void main(String[] args)
   {
     VIAFitSystem viaFitSystem = new VIAFitSystem();
-    System.out.println(viaFitSystem.getMemberList().getMember(1));
+    System.out.println(viaFitSystem.getMemberList());
   }
 }

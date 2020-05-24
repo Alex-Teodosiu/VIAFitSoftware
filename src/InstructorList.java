@@ -24,6 +24,7 @@ public class InstructorList implements Serializable
 
   public void removeInstructor(int index){
     instructors.remove(index);
+    instructorFileAdapter.saveInstructors(this);
   }
 
   public void removeInstructor(Instructor instructor){
@@ -36,6 +37,7 @@ public class InstructorList implements Serializable
   }
 
   public Instructor getInstructor(int index){
+
     return instructors.get(index);
   }
 
