@@ -63,6 +63,9 @@ public class Controller extends VIAFitSystem
   private TextField classMemberLimit;
 
   @FXML
+  private ArrayList<String> tempMemberList;
+
+  @FXML
   private void initialize(){
     instructorList = new ListView<>();
     instructorList.getItems().add("Option");
@@ -89,6 +92,13 @@ public class Controller extends VIAFitSystem
 
     window.setScene(homeScene);
     window.show();
+
+    
+    for(int i = 0; i < getMemberList().size(); i++){
+      tempMemberList.add(getMemberList().getMember(i).getName());
+    }
+
+
   }
 
   public void instructorButtonClick(javafx.event.ActionEvent actionEvent) throws IOException
