@@ -37,7 +37,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="className" prefHeight="60.0" prefWidth="885.0">
+                  <TextField fx:id="classProfileName" prefHeight="60.0" prefWidth="885.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -57,7 +57,8 @@
                   <ComboBox fx:id="comboBoxInstructors" prefWidth="150.0">
                      <HBox.margin>
                         <Insets top="20.0" />
-                     </HBox.margin></ComboBox>
+                     </HBox.margin>
+                  </ComboBox>
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -74,6 +75,14 @@
                      </font>
                   </Label>
                   <TextField fx:id="classMemberLimit" prefHeight="63.0" prefWidth="139.0" promptText=" Enter integer number" />
+                  <Label prefHeight="66.0" prefWidth="182.0" text="Member Limit:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="67.0" prefWidth="1054.0" spacing="5.0">

@@ -3,18 +3,20 @@ import java.util.ArrayList;
 
 public class Class implements Serializable
 {
-  private ArrayList<String> instructors;
+  private final static long serialVersionUID = -7175877205437391816L;
+
+  private String instructor;
   private ArrayList<Member> members;
   private String className;
-  private Date startTime, endTime;
+  private ArrayList<Date> lessons;
   private int maxNumberOfMembers;
 
-  public Class(Instructor instr, String className, int maxNumberOfMembers){
-    instructors = new ArrayList<String>();
+  public Class(String instr, String className, int maxNumberOfMembers){
+    instructor = instr;
     members = new ArrayList<Member>();
-    instructors.add(instr.getName());
     this.className = className;
     this.maxNumberOfMembers = maxNumberOfMembers;
+    lessons = new ArrayList<>();
   }
 
   public void addMember(Member member){
@@ -23,29 +25,35 @@ public class Class implements Serializable
     }
   }
 
-  public void setInstructor(Instructor instr){
-    instructors.add(instr.getName());
+  public void setInstructor(String instr){
+    instructor = instr;
   }
 
-  public String getInstructors(){
-    return instructors.toString();
+  public String getInstructor(){
+    return instructor;
   }
 
-  public void setTimeSlot(Date start, Date end){
-    startTime = start.copy();
-    endTime = end.copy();
+  public void addLesson(Date date){
+    lessons.add(date);
+  }
+  public void removeLesson(int index){
+    lessons.remove(index);
   }
 
   public String getClassName(){
     return className;
   }
 
-  public String getTimeSlot(){
-    return startTime + " till " + endTime;
+  public ArrayList<Date> getLessons(){
+    return lessons;
+  }
+
+  public Date getDate(int index){
+    return lessons.get(index);
   }
 
   public String toString(){
-    return "Class Name: " + className + "\nInstructor(s): " + instructors + getTimeSlot();
+    return "Class Name: " + className + "\nInstructor: " + instructor;
   }
 
 }

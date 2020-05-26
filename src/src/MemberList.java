@@ -3,7 +3,9 @@ import java.util.ArrayList;
 
 public class MemberList implements Serializable
 {
-  private ArrayList<Member> members;
+  private static final long serialVersionUID = 3132772975308072199L;
+
+  public ArrayList<Member> members;
   private MemberFileAdapter memberFileAdapter;
 
   public MemberList(){

@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0">
@@ -38,7 +37,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="instructorName" editable="false" prefHeight="60.0" prefWidth="885.0">
+                        <TextField fx:id="instructorProfileName" editable="false" prefHeight="60.0" prefWidth="885.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -55,7 +54,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="instructorAddress" editable="false" prefHeight="60.0" prefWidth="885.0">
+                        <TextField fx:id="instructorProfileAddress" editable="false" prefHeight="60.0" prefWidth="885.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -72,7 +71,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="instructorPhone" editable="false" prefHeight="60.0" prefWidth="885.0">
+                        <TextField fx:id="instructorProfilePhone" editable="false" prefHeight="60.0" prefWidth="885.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -89,7 +88,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="instructorMail" editable="false" prefHeight="60.0" prefWidth="885.0">
+                        <TextField fx:id="instructorProfileMail" editable="false" prefHeight="60.0" prefWidth="885.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -120,12 +119,17 @@
             </VBox>
             <Label layoutX="14.0" layoutY="51.0" prefHeight="30.0" prefWidth="505.0" text="Name of the specific instructor" />
             <Button layoutX="14.0" layoutY="551.0" mnemonicParsing="false" onAction="#instructorButtonClick" prefHeight="26.0" prefWidth="138.0" text="Back" />
-            <Button layoutX="624.0" layoutY="481.0" mnemonicParsing="false" onAction="#instructorButtonClick" prefHeight="82.0" prefWidth="200.0" text="Delete instructor">
+            <Button layoutX="868.0" layoutY="481.0" mnemonicParsing="false" onAction="#instructorDeleteListener" prefHeight="82.0" prefWidth="200.0" text="Delete Instructor">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="saveInstructor" layoutX="868.0" layoutY="481.0" mnemonicParsing="false" onAction="#saveInstructorListener" prefHeight="82.0" prefWidth="200.0" text="Edit Information">
+            <Button fx:id="saveInstructor" layoutX="377.0" layoutY="481.0" mnemonicParsing="false" onAction="#editInstructorInformationListener" prefHeight="82.0" prefWidth="200.0" text="Edit Information">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="instructorSaveChanges" disable="true" layoutX="622.0" layoutY="481.0" mnemonicParsing="false" onAction="#instructorSaveChangesListener" prefHeight="82.0" prefWidth="200.0" text="Save Changes">
                <font>
                   <Font size="18.0" />
                </font>

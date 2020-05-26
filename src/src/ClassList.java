@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class ClassList implements Serializable
 {
-  private ArrayList<Class> classes;
+  private final static long serialVersionUID = -6119364804332197121L;
+  public ArrayList<Class> classes;
   private ClassFileAdapter classFileAdapter;
 
   public ClassList(){

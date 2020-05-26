@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class InstructorList implements Serializable
 {
-  private ArrayList<Instructor> instructors;
+  private static final long serialVersionUID = -8845764428490235464L;
+  public ArrayList<Instructor> instructors;
   private InstructorFileAdapter instructorFileAdapter;
 
   public InstructorList(){
