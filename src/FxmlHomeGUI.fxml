@@ -52,7 +52,7 @@
                <graphic>
                   <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../OneDrive/Desktop/ViaCode/src/Images/addIcon.png" />
+                        <Image url="@/Images/addIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -61,7 +61,7 @@
                <graphic>
                   <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../OneDrive/Desktop/ViaCode/src/Images/addIcon.png" />
+                        <Image url="@/Images/addIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -70,10 +70,15 @@
                <graphic>
                   <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../OneDrive/Desktop/ViaCode/src/Images/addIcon.png" />
+                        <Image url="@/Images/addIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#updateCalendar" prefHeight="15.0" prefWidth="180.0" text="Update Calendar">
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Button>
          </children>
          <padding>

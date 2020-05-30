@@ -48,4 +48,11 @@ public class MemberFileAdapter implements Serializable
     catch (IOException e){
     }
   }
+
+  public static void main(String[] args)
+  {
+    MemberFileAdapter memberFileAdapter = new MemberFileAdapter("members.bin");
+    memberFileAdapter.removeAllMembers();
+    System.out.println(memberFileAdapter.getAllMembers());
+  }
 }

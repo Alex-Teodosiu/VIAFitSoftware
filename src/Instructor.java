@@ -3,53 +3,45 @@ import java.util.ArrayList;
 
 public class Instructor extends Person implements Serializable
 {
-  private ArrayList<String> classes;
+  private static final long serialVersionUID = -5279292488231572240L;
+  private ArrayList<Class> instructorsClasses;
 
 
   public Instructor(String name, String address, String phoneNumber, String email){
     super(name, address, phoneNumber, email);
-    classes = new ArrayList<String>();
+    instructorsClasses = new ArrayList<>();
   }
 
-  public ArrayList<String> getClasses()
+  public String getClasses()
   {
-    return classes;
+    return instructorsClasses.toString();
   }
 
   public void addClass(Class clas){
-    classes.add(clas.getClassName());
+    instructorsClasses.add(clas);
   }
 
   public void removeClass(Class clas){
-    for (int i = 0; i < classes.size(); i++){
-      if (classes.get(i).matches(clas.getClassName())){
-        classes.remove(i);
+    for (int i = 0; i < instructorsClasses.size(); i++){
+      if (instructorsClasses.get(i).equals(clas)){
+        instructorsClasses.remove(i);
       }
     }
   }
 
-  public void setClasses(ArrayList<String> classes){
-    this.classes = classes;
+  public void setClasses(ArrayList<Class> instructorsClasses){
+    this.instructorsClasses = instructorsClasses;
   }
 
   public boolean equals(Object obj){
     if (!(obj instanceof Instructor)){
       return false;
     }
-    if (classes.size() != ((Instructor) obj).classes.size()){
-      return false;
-    }
 
-    for (int i = 0; i < classes.size(); i++){
-      if (!classes.get(i).equals(((Instructor) obj).classes.get(i))){
-        return false;
-      }
-    }
     return super.equals(obj);
   }
 
   public String toString(){
-    return super.toString() + "Classes: " + classes;
+    return super.toString();
   }
-
 }

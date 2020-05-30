@@ -44,4 +44,15 @@ public class ClassFileAdapter implements Serializable
       e.printStackTrace();
     }
   }
+
+  public void removeAllClasses(){
+    ClassList classList = new ClassList();
+    saveClasses(classList);
+  }
+
+  public static void main(String[] args)
+  {
+    ClassFileAdapter classFileAdapter = new ClassFileAdapter("classes.bin");
+    classFileAdapter.removeAllClasses();
+  }
 }

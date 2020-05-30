@@ -57,8 +57,7 @@ public abstract class Person implements Serializable
   }
 
   public String toString(){
-    return "Name: " + name + "\nAddress: " + address + "\nPhone number: " + phoneNumber +
-        "\nEmail: " + email;
+    return "" + name;
   }
 
 }

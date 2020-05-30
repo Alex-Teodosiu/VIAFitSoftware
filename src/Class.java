@@ -1,51 +1,129 @@
+import com.sun.glass.ui.Menu;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Class implements Serializable
 {
-  private ArrayList<String> instructors;
+  private final static long serialVersionUID = -7175877205437391816L;
+
+  private Instructor instructor;
   private ArrayList<Member> members;
   private String className;
-  private Date startTime, endTime;
+  private ArrayList<Date> lessons;
   private int maxNumberOfMembers;
+  private String numberOfMembers;
 
-  public Class(Instructor instr, String className, int maxNumberOfMembers){
-    instructors = new ArrayList<String>();
-    members = new ArrayList<Member>();
-    instructors.add(instr.getName());
-    this.className = className;
-    this.maxNumberOfMembers = maxNumberOfMembers;
+  public Class(String className, Instructor instructor, int maxNumberOfMembers){
+      this.className = className;
+      this.instructor = instructor;
+      members = new ArrayList<>();
+      this.maxNumberOfMembers = maxNumberOfMembers;
+      numberOfMembers = "0";
+
+    lessons = new ArrayList<>();
   }
 
   public void addMember(Member member){
     if (members.size() < maxNumberOfMembers){
-      members.add(member);
+      this.members.add(member);
+      numberOfMembers = Integer.toString(members.size());
     }
   }
 
-  public void setInstructor(Instructor instr){
-    instructors.add(instr.getName());
+  public void removeMember(Member member){
+    for (int i = 0; i < members.size(); i++){
+      if (members.get(i).equals(member)){
+        members.remove(i);
+        numberOfMembers = Integer.toString(members.size());
+        break;
+      }
+    }
   }
 
-  public String getInstructors(){
-    return instructors.toString();
+  public void removeLesson(Date date){
+    for (int i = 0; i < lessons.size(); i++){
+      if (lessons.get(i).equals(date)){
+        lessons.remove(i);
+        break;
+      }
+    }
   }
 
-  public void setTimeSlot(Date start, Date end){
-    startTime = start.copy();
-    endTime = end.copy();
+  public Member getMember(int i){
+    return members.get(i);
+  }
+
+  public ArrayList<Member> getMembers(){
+    return members;
+  }
+
+  public void setMembers(ArrayList<Member> members){
+    this.members = members;
+    numberOfMembers = Integer.toString(members.size());
+  }
+
+  public String getNumberOfMembers(){
+    return numberOfMembers;
+  }
+
+  public int getMaxNumberOfMembers()
+  {
+    return maxNumberOfMembers;
+  }
+
+  public void setInstructor(Instructor instructor){
+    this.instructor = instructor;
+  }
+
+  public Instructor getInstructor(){
+    return instructor;
+  }
+
+  public String getStringInstructor(){
+    return instructor.getName();
+  }
+
+  public void addLesson(Date date){
+    lessons.add(date);
+  }
+  public void removeLesson(int index){
+    lessons.remove(index);
+  }
+
+  public void setLessons(ArrayList<Date> dateArrayList){
+    lessons = dateArrayList;
+  }
+
+  public void setClassName(String className){
+    this.className = className;
+  }
+
+  public void setMaxNumberOfMembers(int i){
+    maxNumberOfMembers = i;
   }
 
   public String getClassName(){
     return className;
   }
 
-  public String getTimeSlot(){
-    return startTime + " till " + endTime;
+  public ArrayList<Date> getLessons(){
+    return lessons;
+  }
+
+  public Date getDate(int index){
+    return lessons.get(index);
+  }
+
+  public boolean equals(Object obj){
+    if (!(obj instanceof Class)){
+      return false;
+    }
+    return className.equals(((Class) obj).className) && instructor.equals(((Class) obj).instructor)&& maxNumberOfMembers == ((Class) obj).maxNumberOfMembers;
   }
 
   public String toString(){
-    return "Class Name: " + className + "\nInstructor(s): " + instructors + getTimeSlot();
+    return "Class Name: " + className + "\nInstructor: " + instructor+"\nMembers: "+members;
   }
 
 }

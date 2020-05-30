@@ -3,16 +3,32 @@ import java.util.ArrayList;
 
 public class ClassList implements Serializable
 {
-  private ArrayList<Class> classes;
+  private final static long serialVersionUID = -6119364804332197121L;
+  public ArrayList<Class> classes;
   private ClassFileAdapter classFileAdapter;
 
   public ClassList(){
-    classes = new ArrayList<Class>();
+    classes = new ArrayList<>();
     classFileAdapter = new ClassFileAdapter("classes.bin");
+  }
+
+  public void setClassName(int index, String name){
+    classes.get(index).setClassName(name);
+    classFileAdapter.saveClasses(this);
+  }
+
+  public void setClassMemberLimit(int index, int num){
+    classes.get(index).setMaxNumberOfMembers(num);
+    classFileAdapter.saveClasses(this);
   }
 
   public void addClass(Class clas){
     classes.add(clas);
+    classFileAdapter.saveClasses(this);
+  }
+
+  public void setClassInstructor(int index, Instructor instructor){
+    classes.get(index).setInstructor(instructor);
     classFileAdapter.saveClasses(this);
   }
 
@@ -25,7 +41,6 @@ public class ClassList implements Serializable
   public void removeClass(int index){
     classes.remove(index);
     classFileAdapter.saveClasses(this);
-
   }
 
   public void removeClass(Class clas){
@@ -34,6 +49,30 @@ public class ClassList implements Serializable
         classes.remove(i);
       }
     }
+    classFileAdapter.saveClasses(this);
+  }
+
+  public void updateList(){
+    classFileAdapter.saveClasses(this);
+  }
+
+  public void signUpMember(int classIndex, Member member){
+    classes.get(classIndex).addMember(member);
+    classFileAdapter.saveClasses(this);
+  }
+
+  public void removeMember(int classIndex, Member member){
+    classes.get(classIndex).removeMember(member);
+    classFileAdapter.saveClasses(this);
+  }
+
+  public void addLesson(int classIndex, Date date){
+    classes.get(classIndex).addLesson(date);
+    classFileAdapter.saveClasses(this);
+  }
+
+  public void removeLesson(int classIndex, Date date){
+    classes.get(classIndex).removeLesson(date);
     classFileAdapter.saveClasses(this);
   }
 

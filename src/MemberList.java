@@ -3,11 +3,13 @@ import java.util.ArrayList;
 
 public class MemberList implements Serializable
 {
-  private ArrayList<Member> members;
+  private static final long serialVersionUID = 3132772975308072199L;
+
+  public ArrayList<Member> members;
   private MemberFileAdapter memberFileAdapter;
 
   public MemberList(){
-    members = new ArrayList<Member>();
+    members = new ArrayList<>();
     memberFileAdapter = new MemberFileAdapter("members.bin");
   }
 
@@ -41,6 +43,16 @@ public class MemberList implements Serializable
 
   public int size(){
     return members.size();
+  }
+
+  public ArrayList<Member> getPremiumMembers(){
+    ArrayList<Member> premiumMembers = new ArrayList<>();
+    for (int i = 0; i < members.size(); i++){
+      if (members.get(i).isPremiumMember()){
+        premiumMembers.add(members.get(i));
+      }
+    }
+    return premiumMembers;
   }
 
   public String toString(){

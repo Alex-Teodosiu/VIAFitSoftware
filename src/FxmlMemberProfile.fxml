@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +11,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
@@ -38,7 +38,10 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="memberName" editable="false" prefHeight="60.0" prefWidth="885.0" />
+                        <TextField fx:id="memberProfileName" editable="false" prefHeight="60.0" prefWidth="885.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
                      </children>
                      <padding>
                         <Insets left="20.0" />
@@ -51,7 +54,10 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="memberAddress" editable="false" prefHeight="60.0" prefWidth="885.0" />
+                        <TextField fx:id="memberProfileAddress" editable="false" prefHeight="60.0" prefWidth="885.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
                      </children>
                      <padding>
                         <Insets left="20.0" />
@@ -64,7 +70,10 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="memberPhone" editable="false" prefHeight="60.0" prefWidth="885.0" />
+                        <TextField fx:id="memberProfilePhone" editable="false" prefHeight="60.0" prefWidth="885.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
                      </children>
                      <padding>
                         <Insets left="20.0" />
@@ -77,7 +86,10 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="memberMail" editable="false" prefHeight="60.0" prefWidth="886.0" />
+                        <TextField fx:id="memberProfileMail" editable="false" prefHeight="60.0" prefWidth="886.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
                      </children>
                      <padding>
                         <Insets left="20.0" />
@@ -85,12 +97,19 @@
                   </HBox>
                   <HBox prefHeight="67.0" prefWidth="1054.0" spacing="5.0">
                      <children>
-                        <Label prefHeight="60.0" prefWidth="182.0" text="Membership status:" textAlignment="CENTER">
+                        <Label prefHeight="60.0" prefWidth="182.0" text="Membership:" textAlignment="CENTER">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField editable="false" prefHeight="67.0" prefWidth="850.0" />
+                        <CheckBox fx:id="memberProfileMembership" disable="true" mnemonicParsing="false" text="Premium">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </CheckBox>
                      </children>
                      <padding>
                         <Insets left="20.0" />
@@ -98,18 +117,27 @@
                   </HBox>
                </children>
             </VBox>
-            <Label layoutX="14.0" layoutY="51.0" prefHeight="30.0" prefWidth="505.0" text="Name of the specific member" />
             <Button layoutX="14.0" layoutY="551.0" mnemonicParsing="false" onAction="#memberButtonClick" prefHeight="26.0" prefWidth="138.0" text="Back" />
-            <Button layoutX="624.0" layoutY="481.0" mnemonicParsing="false" onAction="#memberButtonClick" prefHeight="82.0" prefWidth="200.0" text="Delete member">
+            <Button fx:id="memberProfileDelete" layoutX="893.0" layoutY="503.0" mnemonicParsing="false" onAction="#memberDeleteListener" prefHeight="60.0" prefWidth="166.0" text="Delete Member">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="memberSave" layoutX="868.0" layoutY="481.0" mnemonicParsing="false" onAction="#saveMemberListener" prefHeight="82.0" prefWidth="200.0" text="Edit information">
+            <Button fx:id="editInformation" layoutX="428.0" layoutY="503.0" mnemonicParsing="false" onAction="#editInformationListener" prefHeight="60.0" prefWidth="165.0" text="Edit Information">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
+            <Button fx:id="memberSaveChanges" disable="true" layoutX="659.0" layoutY="503.0" mnemonicParsing="false" onAction="#memberSaveChangesListener" prefHeight="60.0" prefWidth="166.0" text="Save Changes">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="434.0" layoutY="44.0" prefHeight="27.0" prefWidth="318.0" style="-fx-alignment: CENTER;" text="Member Profile" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

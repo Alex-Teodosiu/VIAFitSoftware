@@ -43,4 +43,15 @@ public class InstructorFileAdapter implements Serializable
     catch (IOException e){
     }
   }
+
+  public void removeAllInstructors(){
+    InstructorList instructorList = new InstructorList();
+    saveInstructors(instructorList);
+  }
+
+  public static void main(String[] args)
+  {
+    InstructorFileAdapter instructorFileAdapter = new InstructorFileAdapter("instructors.bin");
+    instructorFileAdapter.removeAllInstructors();
+  }
 }

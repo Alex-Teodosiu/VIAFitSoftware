@@ -96,13 +96,11 @@
             </HBox>
          </children>
       </VBox>
-      <Label layoutX="14.0" layoutY="51.0" prefHeight="30.0" prefWidth="505.0" text="Name of the specific member" />
-      <Button layoutX="14.0" layoutY="551.0" mnemonicParsing="false" onAction="#memberButtonClick" prefHeight="26.0" prefWidth="138.0" text="Back" />
-      <Button layoutX="624.0" layoutY="481.0" mnemonicParsing="false" onAction="#memberButtonClick" prefHeight="82.0" prefWidth="200.0" text="Delete member">
+      <Label layoutX="496.0" layoutY="44.0" prefHeight="30.0" prefWidth="242.0" text="Member Registration" underline="true">
          <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Button layoutX="14.0" layoutY="551.0" mnemonicParsing="false" onAction="#memberButtonClick" prefHeight="26.0" prefWidth="138.0" text="Back" />
       <Button fx:id="memberSave" layoutX="868.0" layoutY="481.0" mnemonicParsing="false" onAction="#saveMemberListener" prefHeight="82.0" prefWidth="200.0" text="Save member">
          <font>
             <Font size="18.0" />
