@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="893.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/Images/VIAFitLogoTransp.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="318.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#homeButtonClick" prefHeight="26.0" prefWidth="75.0" text="Home" />
+            <Button fx:id="membersButton" mnemonicParsing="false" onAction="#memberButtonClick" prefHeight="26.0" prefWidth="75.0" text="Members" />
+            <Button mnemonicParsing="false" onAction="#instructorButtonClick" prefHeight="26.0" prefWidth="75.0" text="Instructors" />
+            <Button mnemonicParsing="false" onAction="#classButtonClick" prefHeight="26.0" prefWidth="75.0" text="Classes" />
+         </children>
+      </HBox>
+      <Button layoutX="290.0" layoutY="470.0" mnemonicParsing="false" onAction="#specificClassButtonClick" prefHeight="63.0" prefWidth="191.0" text="Add Class">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label layoutX="494.0" layoutY="38.0" prefHeight="38.0" prefWidth="169.0" text="Class List" textAlignment="CENTER" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TableView fx:id="classTable" layoutX="162.0" layoutY="141.0" prefHeight="300.0" prefWidth="750.0">
+        <columns>
+          <TableColumn fx:id="classColumnName" prefWidth="178.4000244140625" style="-fx-alignment: CENTER;" text="Name" />
+          <TableColumn fx:id="classColumnInstructor" prefWidth="220.79998779296875" style="-fx-alignment: CENTER;" text="Instructor" />
+            <TableColumn fx:id="classColumnMemberLimit" minWidth="0.0" prefWidth="133.5999755859375" style="-fx-alignment: CENTER;" text="Member Limit" />
+            <TableColumn fx:id="classListSignedMembers" prefWidth="140.00003662109373" style="-fx-alignment: CENTER;" text="Signed Up Members" />
+        </columns>
+      </TableView>
+      <Button layoutX="620.0" layoutY="470.0" mnemonicParsing="false" onAction="#deleteClassListener" prefHeight="63.0" prefWidth="239.0" text="Delete Selected Class">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="37.0" layoutY="522.0" mnemonicParsing="false" onAction="#homeButtonClick" prefHeight="43.0" prefWidth="143.0" text="Back" />
+   </children>
+</AnchorPane>
